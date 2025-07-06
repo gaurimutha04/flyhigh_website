@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Fly High Foundation</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: #f4f6f9;
+      font-family: 'Segoe UI', sans-serif;
+      color: #222;
+      margin: 0;
+      padding: 0;
+    }
+    .top-bar {
+      background-color: #0d6dbd;
+      padding: 15px 0;
+      color: white;
+    }
+    .container {
+      width: 90%;
+      margin: auto;
+    }
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    section {
+      border-bottom: 1px solid #d3dce6;
+    }
+    .hero {
+      background-color: #e9f1fb;
+      padding: 50px 0;
+    }
+    .split-hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .hero-text {
+      flex: 1;
+      padding-right: 20px;
+    }
+    .hero-img img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 8px;
+    }
+    .main-content {
+      background-color: #ffffff;
+      padding: 50px 20px;
+    }
+    .public-response {
+      background-color: #f8fafd;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .features {
+      background-color: #fefefe;
+      padding: 50px 20px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .feature-box {
+      background-color: #f4f6f9;
+      border: 1px solid #dee4ea;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+    }
+    .quote-banner {
+      background-color: #0d6dbd;
+      text-align: center;
+      padding: 40px 20px;
+      font-style: italic;
+      font-size: 1.3rem;
+      color: white;
+    }
+    footer {
+      background-color: #0d6dbd;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+    .quiz-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 16px;
+    }
+    .quiz-options .option {
+      padding: 10px 18px;
+      border: none;
+      border-radius: 6px;
+      background-color: #0d6dbd;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .quiz-options .option:hover {
+      background-color: #095a9d;
+    }
+    .fade {
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+    }
+    .fade.show {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="top-bar">
+    <div class="container nav-container">
+      <div class="logo-text">Fly High Foundation</div>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="get-involved.html">Get Involved</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container split-hero">
+      <div class="hero-text">
+        <h2>“Their wings already exist. All we do is help them Fly.”</h2>
+        <p>Welcome to Maharashtra's first fully student-led NGO transforming education from the ground up.</p>
+      </div>
+      <div class="hero-img">
+        <img src="assets/images/hero.jpg" alt="Fly High students" />
+      </div>
+    </div>
+  </section>
+
+  <section class="main-content">
+    <div class="container">
+      <h3>Our Story</h3>
+      <p>It started with a conversation between a teenager and her house help. When Seema's dreams were too big for her reality, we knew we had to act. What started with 3 students now empowers over 2000 — taught by high schoolers, guided by purpose, and powered by belief. We are redefining who can teach, how learning feels, and what children are truly capable of.</p>
+    </div>
+  </section>
+
+  <section class="public-response">
+    <h3>How many students in India either don’t go to school or attend school but still cannot read or write?</h3>
+    <div class="quiz-options">
+      <button class="option" data-value="less">Less than 1 crore</button>
+      <button class="option" data-value="one-two">1 to 2 crore</button>
+      <button class="option" data-value="more">More than 3 crore</button>
+      <button class="option" data-value="idk">I don't know</button>
+    </div>
+    <br />
+    <p id="response-msg" class="fade"></p>
+    <p id="stat-msg" class="fade" style="display:none; font-size: 0.95rem; color: #444; margin-top: 10px;"></p>
+  </section>
+
+  <section class="features">
+    <div class="container grid">
+      <div class="feature-box">
+        <h4>Visual Learning</h4>
+        <p>Our classes use interactive, visual methods — from animated videos to real experiments.</p>
+      </div>
+      <div class="feature-box">
+        <h4>Teen Teachers</h4>
+        <p>Every teacher is a student themselves, proving that empathy and youth can change lives.</p>
+      </div>
+      <div class="feature-box">
+        <h4>Scholarships</h4>
+        <p>We’ve helped students like Sakshi earn scholarships through mentoring and belief.</p>
+      </div>
+      <div class="feature-box">
+        <h4>Creative Tracks</h4>
+        <p>We support talent in mehndi, drawing, and dance to build pride and identity beyond academics.</p>
+      </div>
+      <div class="feature-box">
+        <h4>Workshops + Events</h4>
+        <p>We organize the city's biggest youth-led fundraisers and skill-building festivals each year.</p>
+      </div>
+      <div class="feature-box">
+        <h4>Scaling Our Model</h4>
+        <p>Our goal is to replicate Fly High in every Indian village, with local student-led hubs of hope.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote-banner">
+    <h2>“We may be a drop in the ocean, but we are what makes the ocean.”</h2>
+  </section>
+
+  <footer>
+    <p>© Fly High Foundation | All rights reserved.</p>
+  </footer>
+
+  <script>
+    const stats = [
+      "🧠 According to UNESCO, over 3.2 crore children in India lack access to effective schooling or literacy. Let’s rewrite that future.",
+      "📚 Only 50% of grade 5 students in rural India can read a grade 2-level text, according to ASER.",
+      "🚸 1 in 5 school-going children in India lacks basic reading and math skills.",
+      "🎓 Millions of children are first-generation learners and need extra support to succeed in school.",
+      "📖 Education is the most powerful weapon we can use to change the world. Let's ensure it's accessible to all."
+    ];
+
+    document.querySelectorAll(".quiz-options .option").forEach(button => {
+      button.addEventListener("click", () => {
+        checkAnswer(button.getAttribute("data-value"));
+      });
+    });
+
+    function checkAnswer(answer) {
+      const msg = document.getElementById("response-msg");
+      const stat = document.getElementById("stat-msg");
+
+      msg.classList.remove("show");
+      stat.classList.remove("show");
+
+      let isCorrect = false;
+
+      if (answer === "") {
+        msg.textContent = "Please select an option to continue.";
+        msg.style.color = "#d9534f";
+        setTimeout(() => msg.classList.add("show"), 50);
+        return;
+      }
+
+      if (answer === "more") {
+        msg.textContent = "✅ You're right! Over 3 crore children in India face this issue. This is why Fly High exists—to make a change.";
+        msg.style.color = "green";
+        isCorrect = true;
+      } else {
+        msg.textContent = "❌ Not quite. It's actually more than 3 crore children. Shocking, right? We're working to change that.";
+        msg.style.color = "#d9534f";
+      }
+
+      const randomStat = stats[Math.floor(Math.random() * stats.length)];
+      stat.textContent = randomStat;
+
+      setTimeout(() => {
+        msg.classList.add("show");
+        stat.style.display = "block";
+        stat.classList.add("show");
+      }, 100);
+
+      storeResponse(answer, isCorrect);
+    }
+
+    function storeResponse(answer, isCorrect) {
+      const response = {
+        answer,
+        isCorrect,
+        time: new Date().toLocaleString()
+      };
+
+      let allResponses = JSON.parse(localStorage.getItem("quizResponses")) || [];
+      allResponses.push(response);
+      localStorage.setItem("quizResponses", JSON.stringify(allResponses));
+    }
+  </script>
+</body>
+</html>
